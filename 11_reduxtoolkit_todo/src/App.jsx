@@ -1,18 +1,22 @@
+/* eslint-disable no-unused-vars */
 import { useDispatch, useSelector } from "react-redux";
 import { decrement, increment } from "./redux/slice/counter";
-import MyComp from "./MyComp";
+import MyComp from "./component/MyComp";
+
 
 function App() {
-  const count = useSelector((state) => state.counter);
+  const countrtk = useSelector((state) => state.counter);
   const dispatch = useDispatch();
 
   return (
     <>
-      <h1>Learning about redux toolkit.</h1>
-      <h2>Count is {count}</h2>
-      <button onClick={() => dispatch(increment())}>Increment</button>
-      <button onClick={() => dispatch(decrement())}>Decrement</button>
-      <MyComp />
+      <div>
+        <h1>Counter using Redux Toolkit (RTK).</h1>
+        <h2>Count from RTK is {countrtk}</h2>
+        <button onClick={() => dispatch(increment())}>Increment</button>
+        <button onClick={() => dispatch(decrement())}>Decrement</button>
+        <MyComp />
+      </div>
     </>
   );
 }
